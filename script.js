@@ -1,5 +1,4 @@
-// import {io}  from '/socket.io-client'
-// const socket=io('http://localhost:3000')
+
 const outputDiv=document.getElementById("chatarea")
 var inputmsg=document.getElementById('inputBox')
 document.getElementById('sendButton').addEventListener("click",()=>
