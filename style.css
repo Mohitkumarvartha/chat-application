@@ -1,0 +1,37 @@
+#chatarea
+{
+    border:1px solid black;
+    height:10cm;
+    width:10cm;
+    overflow-y:scroll;
+    scroll-behavior: smooth;
+}
+.container
+{
+    display:flex;
+    padding-top:1rem;
+}
+.container input{
+    width:8cm;
+    height:1cm;
+    border:1px solid black;
+    border-radius:0.5rem;
+}
+.container button{
+    width:2cm;
+    border:1px white;
+    border-radius:1rem;
+    color:white;
+    background-color: green;
+    cursor: pointer;
+}
+#chatarea div
+{
+    border:1px black solid;
+    background-color:black;
+    color:white;
+    border-radius:0.5rem;
+    width:max-content;
+    padding:1rem;
+    font-weight: 700;
+}
