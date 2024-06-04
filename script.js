@@ -1,21 +1,26 @@
-const socket=io("http://localhost:3000")
+const socket=io(window.location.hostname)
 
 const name=window.prompt("enter your name:");
 
 
 const outputDiv=document.getElementById("chatarea")
-
+socket.emit("enter room",name)
+socket.on("entered room",(name)=>
+{
+    displayentered(name)
+})
 document.getElementById('sendButton').onclick=()=>
 {
     var msg=document.getElementById('inputBox').value
     
     if(msg==='') return
     displaymessage(msg)
-    socket.emit("mymessage",msg)
+    socket.emit("mymessage",name,msg)
 }
-socket.on("received_message",message=>
+
+socket.on("received_message",(name,message)=>
     {
-        displaymessageother(message)
+        displaymessageother(name,message)
     }
 )
 function displaymessage(message)
@@ -26,10 +31,18 @@ function displaymessage(message)
     outputDiv.append(div)
     outputDiv.scrollTop = outputDiv.scrollHeight;
 }
-function displaymessageother(message)
+function displaymessageother(name,message)
 {
     const div=document.createElement('div')
     div.innerHTML=name+':\n'+message;
     outputDiv.append(div)
+    outputDiv.scrollTop = outputDiv.scrollHeight;
+}
+function displayentered(name)
+{
+    const div=document.createElement('div')
+    div.innerHTML=name+" entered the chat"
+    outputDiv.append(div)
+    div.style="background-color:blue"
     outputDiv.scrollTop = outputDiv.scrollHeight;
 }
