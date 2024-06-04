@@ -1,3 +1,14 @@
+body{
+    display:grid;
+    place-content: center;
+    align-items: center;
+   
+}
+h2{
+    text-align:center;
+    color:green;
+    
+}
 #chatarea
 {
     border:1px solid black;
@@ -5,8 +16,11 @@
     width:10cm;
     overflow-y:scroll;
     scroll-behavior: smooth;
+    scrollbar-color:rgba(22, 170, 207, 0.336) ;
+    background-color: rgba(30, 16, 214, 0.315);
 
 }
+
 .container
 {
     display:flex;
@@ -29,11 +43,11 @@
 #chatarea div
 {
     border:1px black solid;
-    background-color:black;
+    background-color:green;
     color:white;
     border-radius:0.5rem;
     width:max-content;
     padding: 0.5rem;
     font-weight: 700;
-    
+
 }
