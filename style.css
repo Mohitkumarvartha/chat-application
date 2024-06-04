@@ -5,6 +5,7 @@
     width:10cm;
     overflow-y:scroll;
     scroll-behavior: smooth;
+
 }
 .container
 {
@@ -32,6 +33,7 @@
     color:white;
     border-radius:0.5rem;
     width:max-content;
-    padding:1rem;
+    padding: 0.5rem;
     font-weight: 700;
+    
 }
