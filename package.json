@@ -6,8 +6,8 @@
   "scripts": {
     "start": "nodemon server.js",
     "dev": "nodemon server.js",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build "
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build "
   },
   "keywords": [],
   "author": "",
@@ -17,6 +17,8 @@
     "nodemon": "^3.1.2"
   },
   "dependencies": {
+    "express": "^4.19.2",
+    "http": "^0.0.1-security",
     "socket.io": "^4.7.5"
   }
 }
