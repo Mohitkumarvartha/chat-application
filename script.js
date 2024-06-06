@@ -1,4 +1,4 @@
-const socket=io(process.env.host || 3000)
+const socket=io("http://localhost:3000")
 
 const name=window.prompt("enter your name:");
 
