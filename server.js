@@ -5,11 +5,23 @@
 // const server=http.createServer(app);
 // const io=socket(server);
 // const port=process.env.port || 3000;
-const io=require('socket.io')(3000,{
-    cors:{
-        origin:["http://localhost:5500"]
-    }
-})
+// const io=require('socket.io')(3000,{
+//     cors:{
+//         origin:["http://localhost:5500"]
+//     }
+// })
+require('dotenv').config();
+const express = require('express');
+const http = require('http');
+const socketIo = require('socket.io');
+
+const app = express();
+const server = http.createServer(app);
+const io = socketIo(server);
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/index.html');
+});
 io.on('connection',socket=>
     {
         console.log(socket.id)
@@ -24,8 +36,9 @@ io.on('connection',socket=>
         })
     }
 )
-// server.listen(port,()=>
-//     {
-//         console.log("server is running")
-//     }
-// )
+const port=process.env.port || 3000;
+server.listen(port,()=>
+    {
+        console.log("server is running")
+    }
+)
