@@ -1,4 +1,4 @@
-const socket=io("http://localhost:3000")
+const socket=io("https://chat-application-5-oaxo.onrender.com")
 
 const name=window.prompt("enter your name:");
 
