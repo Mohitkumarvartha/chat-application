@@ -5,7 +5,12 @@
 // const server=http.createServer(app);
 // const io=socket(server);
 // const port=process.env.port || 3000;
-const io=require('socket.io')(3000)
+const io=require('socket.io')(3000,{
+    cors:{
+        origin:["https://chat-application-taupe-gamma.vercel.app"]
+    }
+    
+})
 
 
 io.on('connection',socket=>
