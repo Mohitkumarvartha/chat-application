@@ -5,11 +5,7 @@
 // const server=http.createServer(app);
 // const io=socket(server);
 // const port=process.env.port || 3000;
-const io=require('socket.io')(3000,{
-    cors:{
-        origin:["http://localhost:5500"]
-    }
-})
+const io=require('socket.io')(3000)
 
 
 io.on('connection',socket=>
